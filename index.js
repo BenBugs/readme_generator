@@ -6,21 +6,41 @@ const fs = require('fs');
 function getUserInput() {
 
     let questions = [
+        {
+            type: 'input',
+            name: 'title',
+            message: 'Add a project title',
+        },
         // {
         //     type: 'input',
-        //     name: 'project_title',
-        //     message: 'Add a Project Title',
+        //     name: 'description',
+        //     message: 'Add a project description',
+        // },
+        // {
+        //     type: 'input',
+        //     name: 'contents',
+        //     message: 'Add a table of contents',
+        // },
+        // {
+        //     type: 'input', //table???????!
+        //     name: 'installation',
+        //     message: 'Describe the installation',
+        // },
+        // {
+        //     type: 'input',
+        //     name: 'usage',
+        //     message: 'Describe usage',
+        // },
+        // {
+        //     type: 'list',
+        //     choices: ['MIT', 'GNU', 'open source', 'proprietary', 'freeware'],
+        //     name: 'licence',
+        //     message: 'What licence would you like to apply?',
         // },
         {
             type: 'input',
             name: 'github_username',
             message: 'What is your GitHub username?',
-        },
-        {
-            type: 'list',
-            choices: ['MIT', 'GNU', 'open source', 'proprietary', 'freeware'],
-            name: 'licence',
-            message: 'What licence would you like to apply?',
         }
 
     ];
@@ -29,10 +49,18 @@ function getUserInput() {
 
 }
 
-getUserInput().then(function (response) {
-    console.log(response);
-    getProfile(response.github_username)
-})
+getUserInput()
+
+    .then(function (response) {
+        console.log(response);
+        // pass github username to getProfile()
+        getProfile(response.github_username);
+    })
+
+    .then(function (response) {
+        // pass .prompt responses to generateMarkdown()
+        generateMarkdown(response);
+    })
 
 
 function getProfile(username) {
@@ -45,8 +73,8 @@ function getProfile(username) {
             // handle success
             console.log(image);
 
-            //create readMe file
-            generateMarkdown(response); ///not sure about this
+            // //create readMe file
+            // generateMarkdown(response); ///not sure
 
         })
         .catch(function (error) {
@@ -56,16 +84,22 @@ function getProfile(username) {
 }
 
 
+function generateMarkdown(data) {
+    console.log(data)
+    // fs.writeFile('readme.md', data, function (err/* needs erro message*/) {
+    //     return `
+    //     # ${data[title]} 
+    //     ## ${data.description}
+    //     ### ${data.contents}
+    //     ### ${data.installation}
+    //     ### ${data.usage}
+    //     `;
+
+    // })
+
+}
 
 
-function generateMarkdown( data) {
-    return `
-  # ${data.title}
-  
-  `;
-  }
-  
-  module.exports = generateMarkdown;
 
 
 
