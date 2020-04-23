@@ -1,5 +1,6 @@
 const inquirer = require("inquirer");
 const axios = require('axios');
+const fs = require('fs');
 
 
 function getUserInput() {
@@ -17,7 +18,7 @@ function getUserInput() {
         },
         {
             type: 'list',
-            choices: ['MIT' , 'GNU' , 'open source' , 'proprietary' , 'freeware'],
+            choices: ['MIT', 'GNU', 'open source', 'proprietary', 'freeware'],
             name: 'licence',
             message: 'What licence would you like to apply?',
         }
@@ -39,24 +40,33 @@ function getProfile(username) {
     console.log(queryUrl);
 
     axios.get(queryUrl)
-    .then(function (response) {
-        let image = response.data.avatar_url;
-      // handle success
-      console.log(image);
+        .then(function (response) {
+            let image = response.data.avatar_url;
+            // handle success
+            console.log(image);
 
-      //create readMe file
-        createReadme();
+            //create readMe file
+            generateMarkdown(response); ///not sure about this
 
-    })
-    .catch(function (error) {
-      // handle error
-      console.log(error);
-    })
+        })
+        .catch(function (error) {
+            // handle error
+            console.log(error);
+        })
 }
 
-createReadme() {
-    
-}
+
+
+
+function generateMarkdown( data) {
+    return `
+  # ${data.title}
+  
+  `;
+  }
+  
+  module.exports = generateMarkdown;
+
 
 
 
