@@ -12,7 +12,7 @@
 // 3. add a table of Contents
 // 4. add installation details
 // 5. Usage
-// 6. License
+// 6. License input needs to be multiple choice!!!!!
 // 7. Contributing
 // 8. Tests
 // 9. ask for GitHub username
@@ -24,5 +24,6 @@
 // 2. calling the API
 // 3. storing the response in a variable
 
-// https://img.shields.io/badge/Project-Read%20Me%20Generator-blue
+//![Badge](https://img.shields.io/badge/Project-Read%20Me%20Generator-blue)
 
+// https://img.shields.io/badge/licence-MIT-brightgreen

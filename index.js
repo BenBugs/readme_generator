@@ -1,4 +1,6 @@
 const inquirer = require("inquirer");
+const axios = require('axios');
+
 
 function getUserInput() {
 
@@ -12,6 +14,12 @@ function getUserInput() {
             type: 'input',
             name: 'github_username',
             message: 'What is your GitHub username?',
+        },
+        {
+            type: 'list',
+            choices: ['MIT' , 'GNU' , 'open source' , 'proprietary' , 'freeware'],
+            name: 'licence',
+            message: 'What licence would you like to apply?',
         }
 
     ];
@@ -28,11 +36,27 @@ getUserInput().then(function (response) {
 
 function getProfile(username) {
     let queryUrl = `https://api.github.com/users/${username}`;
-
     console.log(queryUrl);
+
+    axios.get(queryUrl)
+    .then(function (response) {
+        let image = response.data.avatar_url;
+      // handle success
+      console.log(image);
+
+      //create readMe file
+        createReadme();
+
+    })
+    .catch(function (error) {
+      // handle error
+      console.log(error);
+    })
 }
 
-
+createReadme() {
+    
+}
 
 
 
