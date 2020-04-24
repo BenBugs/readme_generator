@@ -56,8 +56,10 @@ async function init()
         const userInput = await getUserInput(); // returns response or error, getUserInput object if successful
         console.log(userInput);
         const profileImage = await getProfile(userInput.github_username);
-        console.log(userInput);
+        const image = profileImage.data.avatar_url;
         console.log(profileImage.data.avatar_url);
+        // pass getUserInput object and profile image to dataPkg function
+        dataPkg(userInput , image);
 
       } catch(err) {
         console.log(err);
@@ -65,6 +67,13 @@ async function init()
 }
 
 init()
+
+function dataPkg(userInput , image) {
+    let userData = userInput;
+    userData.profile = image;
+    console.log(userData)
+    return userData;
+}
 
 
 function getProfile(username) {
