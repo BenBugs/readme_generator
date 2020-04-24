@@ -49,38 +49,29 @@ function getUserInput() {
 
 }
 
-getUserInput()
 
-    .then(function (response) {
-        console.log(response);
-        // pass github username to getProfile()
-        getProfile(response.github_username);
-    })
+async function init()
+{
+    try {
+        const userInput = await getUserInput(); // returns response or error, getUserInput object if successful
+        console.log(userInput);
+        const profileImage = await getProfile(userInput.github_username);
+        console.log(userInput);
+        console.log(profileImage.data.avatar_url);
 
-    .then(function (response) {
-        // pass .prompt responses to generateMarkdown()
-        generateMarkdown(response);
-    })
+      } catch(err) {
+        console.log(err);
+      }
+}
+
+init()
 
 
 function getProfile(username) {
     let queryUrl = `https://api.github.com/users/${username}`;
     console.log(queryUrl);
 
-    axios.get(queryUrl)
-        .then(function (response) {
-            let image = response.data.avatar_url;
-            // handle success
-            console.log(image);
-
-            // //create readMe file
-            // generateMarkdown(response); ///not sure
-
-        })
-        .catch(function (error) {
-            // handle error
-            console.log(error);
-        })
+    return axios.get(queryUrl);
 }
 
 
