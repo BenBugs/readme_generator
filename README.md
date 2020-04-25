@@ -2,31 +2,31 @@
 ![Badge](https://img.shields.io/badge/licence-MIT-brightgreen)
 
 # Project title
-new proj
+title
 
 ## Description
-no
+des
 
 ## Table of Contents
 - Intallation
 - Usage
-- Licence
 - Contributors
 - Tests
 - Questions
 
 ### Installation [an example][id]?
-instal it
+inst
 
 ### Usage
-use it
+use
 
 ### Contributors
-undefined
+https://avatars0.githubusercontent.com/u/60494687?v=4
+ben, udara
 
 ### Tests
-undefined
+none
 
 ### Questions
-undefined
+not a lot
 

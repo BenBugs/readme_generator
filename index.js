@@ -30,6 +30,21 @@ function getUserInput() {
             message: 'Usage (describe how the product is used)',
         },
         {
+            type: 'input',
+            name: 'contributors',
+            message: 'Contibutors (who has worked in this project?)',
+        },
+        {
+            type: 'input',
+            name: 'tests',
+            message: 'Tests (describe any tests that been applied to the project)',
+        },
+        {
+            type: 'input',
+            name: 'questions',
+            message: 'Questions (what do users need to know)',
+        },
+        {
             type: 'list',
             choices: ['MIT', 'GNU', 'open source', 'proprietary', 'freeware'],
             name: 'licence',
@@ -47,18 +62,17 @@ function getUserInput() {
 
 }
 
-
 async function init()
 {
     try {
         const userInput = await getUserInput(); // returns response or error, getUserInput object if successful
-        // console.log(userInput);
+        console.log(userInput);
         const profileImage = await getProfile(userInput.github_username);
         const imageUrl = profileImage.data.avatar_url;
         const badgeType = userInput.licence;
 
         // pass getUserInput object, badge url and profile image to generateMarkdown function
-        const rawDataPackage = cleanDataPackage(userInput , imageUrl, badgeType);
+        cleanDataPackage(userInput , imageUrl, badgeType);
 
       } catch(err) {
         console.log(err);
@@ -77,8 +91,8 @@ function getProfile(username) {
 
 // clean and prcess data into a usable object
 function cleanDataPackage(data , image , badge) {
-    let insertBadgeType = `https://img.shields.io/badge/licence-${badge}-brightgreen`;
-    let formatedBadgeStr = `![Badge](${insertBadgeType})`;
+    console.log(image)
+    let formatedBadgeStr = `![Badge](https://img.shields.io/badge/licence-${badge}-brightgreen)`;
 
     userInput = data; // this is the original .prompt object which is being updated with image and badge strings
     userInput.profile = image;
@@ -102,18 +116,18 @@ ${data.description}
 ## Table of Contents
 - Intallation
 - Usage
-- Licence
 - Contributors
 - Tests
 - Questions
 
-### Installation [an example][id]?
+### Installation
 ${data.installation}
 
 ### Usage
 ${data.usage}
 
 ### Contributors
+${data.profile}
 ${data.contributors}
 
 ### Tests
