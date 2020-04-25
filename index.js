@@ -93,6 +93,7 @@ function getProfile(username) {
 function cleanDataPackage(data , image , badge) {
     console.log(image)
     let formatedBadgeStr = `![Badge](https://img.shields.io/badge/licence-${badge}-brightgreen)`;
+    let formatedImageStr = `![](${image})`
 
     userInput = data; // this is the original .prompt object which is being updated with image and badge strings
     userInput.profile = image;
