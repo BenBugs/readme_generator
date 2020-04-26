@@ -1,11 +1,11 @@
 
-![Badge](https://img.shields.io/badge/licence-proprietary-brightgreen)
+![Badge](https://img.shields.io/badge/licence-MIT-brightgreen)
 
 # Project title
-new project
+Readme Generator
 
 ## Description
-description
+A Readme generator that runs from the terminal using the NPM .inquirer package to allow the user to generate a Readme file. The project features a dynamically created software licence badge and an asynchronous API call to github to retrieve my profile image.
 
 ## Table of Contents
 - Intallation
@@ -15,18 +15,18 @@ description
 - Questions
 
 ### Installation
-installation
+Step 1. download the files and save to a local directory. 2. Navigate to the local directory using your terminal. 3. Type 'node index.js' and follow the command prompts. 4. That's it!
 
 ### Usage
-use in the command line
+By typing 'node. index.js from the command line and following the prompts.
 
 ### Contributors
 ![Profile image](https://avatars0.githubusercontent.com/u/60494687?v=4)
 Ben Cole
 
 ### Tests
-no tests yet
+No tests applied to this project
 
 ### Questions
-no q's
+No questions
 
