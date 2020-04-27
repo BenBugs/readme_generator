@@ -30,5 +30,5 @@ No tests applied to this project
 ### Questions
 No questions
 
-![Video](https://drive.google.com/file/d/1hD0fzxOb9d7PUXuBuiDOGHw234DsVvTl/view?usp=sharing)
+Project video - https://drive.google.com/file/d/1hD0fzxOb9d7PUXuBuiDOGHw234DsVvTl/view?usp=sharing
 
