@@ -21,7 +21,6 @@ Step 1. download the files and save to a local directory. 2. Navigate to the loc
 By typing 'node. index.js from the command line and following the prompts.
 
 ### Contributors
-![Profile image](https://avatars0.githubusercontent.com/u/60494687?v=4)
 Ben Cole
 
 ### Tests
