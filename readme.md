@@ -29,5 +29,5 @@ No tests applied to this project
 ### Questions
 No questions
 
-Please download vidoe to view - https://drive.google.com/file/d/1hD0fzxOb9d7PUXuBuiDOGHw234DsVvTl/view?usp=sharing
+Please download video to view - https://drive.google.com/file/d/1hD0fzxOb9d7PUXuBuiDOGHw234DsVvTl/view?usp=sharing
 
